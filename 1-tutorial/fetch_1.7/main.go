@@ -15,6 +15,8 @@ func main() {
 			os.Exit(1)
 		}
 
-		io.Copy(os.Stdout, resp.Body)
+		if _, err = io.Copy(os.Stdout, resp.Body); err != nil {
+			fmt.Fprintf(os.Stdout, "fetch: reading %s: %v \n", url, err)
+		}
 	}
 }
