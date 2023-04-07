@@ -7,8 +7,6 @@ import (
 )
 
 func main() {
-	//!+main
-	//!+byte_counter
 	fmt.Println("bytecounter")
 	var cb counter.Bytecounter
 	cb.Write([]byte("hello"))
@@ -18,9 +16,7 @@ func main() {
 	var name = "Dolly"
 	fmt.Fprintf(&cb, "hello, %s", name)
 	fmt.Println(cb)
-	//!-byte_counter
 
-	//!+line_counter
 	fmt.Println("\nlinecounter")
 	var lb counter.Linecounter
 	lb.Write([]byte("hello\ndev"))
@@ -30,6 +26,4 @@ func main() {
 	var place = "Florida"
 	fmt.Fprintf(&lb, "stranger: hello, where you live?\nyou:%s\nstranger:that's cool!", place)
 	fmt.Println(lb)
-	//!-line_counter
-	//!-main
 }
